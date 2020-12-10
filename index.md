@@ -1,8 +1,9 @@
-# Voronoi Infill for 3D Printing
+## Background
 
-You can use the [editor on GitHub](https://github.com/nah6563/Voronoi3DPrint/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+For 3D printing, typically one of the goals is to reduce the amount of material required to print an object, while still maintaining structural integrity under stress.  In addition, the object needs to have enough support to not collapse during printing.  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In order to achieve this, there are multiple patterns called infill paterns, which are used to fill up a shell during printing.  Typically these patterns are simple and repeatable, such as a grid of boxs, stars, or spirals. Usually this is created by a complex program called a slicer, which is responsible for taking in a file describing a 3D object, and outputs a set of instructions called G-code based on a variety of settings.
+
 
 ### Markdown
 
