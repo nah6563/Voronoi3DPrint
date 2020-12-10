@@ -60,3 +60,5 @@ However regions are properly being hollowed out inside the model.
 In addition, it appears that simply hollowing out areas is not sufficient for the slicer.  If an area is too small, rather than creating a hole, it will simply put a small layer in that area, as seen by the yellow circles in the middle of the following screenshot.  It seems that for a given size of model, there should be a minimum size of the regions that can be created.  In the picture below, the yellow lines are considered the shell while red lines are lines necessary to support the shells.  This resulted in not actually having a hollow model, although this is likely due to the settings in my slicer.
 
 ![Attempted Slice](/slicer.PNG)
+
+In general, I think this approach was far inferior to just trimming the ridges after generating the diagram once, as described in [Efficient Computation of 3D Clipped Voronoi Diagram](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Efficient-Computation-of-3D-Clipped-Voronoi-Diagram.pdf).  
