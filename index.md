@@ -25,7 +25,14 @@ The main requirements for this program's output is that the resulting stl file i
 
 ## Related Works
 Similar problems to this have been approached multiple times before.
-[Efficient Computation of 3D Clipped Voronoi Diagram](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Efficient-Computation-of-3D-Clipped-Voronoi-Diagram.pdf) by Dong-Ming Yan et. al describes an approach in which a set of points is generated inside of a model, a voronoi diagram is produced, then any ridges 
+
+[Efficient Computation of 3D Clipped Voronoi Diagram](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Efficient-Computation-of-3D-Clipped-Voronoi-Diagram.pdf) by Dong-Ming Yan et. al describes an approach to created a bounded Voronoi Diagram. In this approach, a set of points is generated inside of a model, a voronoi diagram is produced, then any ridges which intersect the outer shell are clipped, and the affected regions are modified.
+
+[Build-to-Last: Strength to Weight 3D Printed Objects](https://homes.cs.washington.edu/~haisen/BuildtoLast/3DP_SIG2014.pdf) by Lin Lu et. al describes an approach to creating printable models using machine learning.  In this approach a set of points is generated inside of the model and a voronoi diagram is generated.  The regions in this diagram are hollowed out by carving out the material specified by a harmonic distance field.  The ability of this model to sustain stress is then determined, and then the location of the points is shifted using an iterative approach, seeking to maximize the amount of stress maintained.
+
+
+
+
 
 ### Markdown
 
