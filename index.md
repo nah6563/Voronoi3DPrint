@@ -10,6 +10,13 @@ For 3D printing, typically one of the goals is to reduce the amount of material 
 
 In order to achieve this, there are multiple patterns called infill paterns, which are used to fill up a shell during printing.  Typically these patterns are simple and repeatable, such as a grid of boxs, stars, or spirals. Usually this is created by a complex program called a slicer, which is responsible for taking in a file describing a 3D object, and outputs a set of instructions called G-code based on a variety of settings.
 
+## Inputs and Outputs
+#### Input
+The input for this program consists of a single stl file, describing the model to be filled in terms of the triangles that form its shell.  The file can be in either ascii or binary.
+The program itself operates on the list of triangles read in, as well as a list of their normal vectors.
+#### Output
+The output for this program consists of a single stl file, describing the model hollowed out by polyhedrons as described by a randomly generated voronoi diagram.
+
 
 
 ### Markdown
