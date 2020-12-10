@@ -1,1 +1,9 @@
 theme: jekyll-theme-cayman
+title: Voronoi Infill for 3D Printing
+locale: en_US
+
+# Enter the following platform usernames if you would like for them to appear on your site.
+owner:
+  name: Nathan Harding
+  email: nah6563@rit.edu
+  github: nah6563
