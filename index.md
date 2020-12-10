@@ -1,8 +1,15 @@
+### Team- Nathan Harding
+
+## Problem
+
+The aim of my project was to create a program to generate a voronoi based infill, which would be run before the model was sent to a slicer. 
+
 ## Background
 
 For 3D printing, typically one of the goals is to reduce the amount of material required to print an object, while still maintaining structural integrity under stress.  In addition, the object needs to have enough support to not collapse during printing.  
 
 In order to achieve this, there are multiple patterns called infill paterns, which are used to fill up a shell during printing.  Typically these patterns are simple and repeatable, such as a grid of boxs, stars, or spirals. Usually this is created by a complex program called a slicer, which is responsible for taking in a file describing a 3D object, and outputs a set of instructions called G-code based on a variety of settings.
+
 
 
 ### Markdown
