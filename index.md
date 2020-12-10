@@ -30,7 +30,12 @@ Similar problems to this have been approached multiple times before.
 
 [Build-to-Last: Strength to Weight 3D Printed Objects](https://homes.cs.washington.edu/~haisen/BuildtoLast/3DP_SIG2014.pdf) by Lin Lu et. al describes an approach to creating printable models using machine learning.  In this approach a set of points is generated inside of the model and a voronoi diagram is generated.  The regions in this diagram are hollowed out by carving out the material specified by a harmonic distance field.  The ability of this model to sustain stress is then determined, and then the location of the points is shifted using an iterative approach, seeking to maximize the amount of stress maintained.
 
+## My Approach
+I primarily explored two approaches for this method, neither of which were efficient enough for real-world use.  I will focus mainly on the second algorithm in this section.
 
+The algorithm begins with a set of triangles given by the stl, as well as a second list of their normals.  
+1. hi
+2. test
 
 
 
