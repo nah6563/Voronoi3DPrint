@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+# Voronoi Infill for 3D Printing
 
 You can use the [editor on GitHub](https://github.com/nah6563/Voronoi3DPrint/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
