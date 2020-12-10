@@ -10,6 +10,8 @@ For 3D printing, typically one of the goals is to reduce the amount of material 
 
 In order to achieve this, there are multiple patterns called infill paterns, which are used to fill up a shell during printing.  Typically these patterns are simple and repeatable, such as a grid of boxs, stars, or spirals. Usually this is created by a complex program called a slicer, which is responsible for taking in a file describing a 3D object, and outputs a set of instructions called G-code based on a variety of settings.
 
+A voronoi diagram displays the region around each of a set of points, where any area in that region is closer to that point than any other.  We will be working in 3D, which means each region will be created by a set of bounded planes, which we will refer to as ridges.  The bounds on these ridges are determined by a set of points on the plane, which we will refer to as vertices.
+
 ## Inputs and Outputs
 #### Input
 The input for this program consists of a single stl file, describing the model to be filled in terms of the triangles that form its shell.  The file can be in either ascii or binary.
@@ -18,6 +20,12 @@ The program itself operates on the list of triangles read in, as well as a list 
 The output for this program consists of a single stl file, describing the model hollowed out by polyhedrons as described by a randomly generated voronoi diagram.
 
 
+## Requirements
+The main requirements for this program's output is that the resulting stl file is printable.  This means that all triangles have properly oriented normals and are connected.  Triangles that aren't properly created can have unpredictable results when run through the slicer.  An optimal solution is not required, however an nonoptimal solution will struggle with high-poly models, or models that contain a large number of triangles.
+
+## Related Works
+Similar problems to this have been approached multiple times before.
+[Efficient Computation of 3D Clipped Voronoi Diagram](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Efficient-Computation-of-3D-Clipped-Voronoi-Diagram.pdf) by Dong-Ming Yan et. al describes an approach in which a set of points is generated inside of a model, a voronoi diagram is produced, then any ridges 
 
 ### Markdown
 
