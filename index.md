@@ -40,34 +40,12 @@ The algorithm begins with a set of triangles given by the stl, as well as a seco
 4. Next we will check all of the vertices that make up X's region in a similar fashion as described in 3.  In order to prevent trimming, we will make sure that X's region is also contained entirely within the model.  
 5. If the region is contained entirely within the model, we can append X to the list that we generated in 1, and then move on to step 2 again.  We can repeat this for as regions as we want to be hollowed out.
 6. The regions created by a voronoi diagram are pefectly packed.  Therefore once we are content with the number of regions, our next goal is to shrink them in order to make them printable.  We accomplish this by iterating through every region that we have created, and calculating the normal at each vertex.  We can approximate this by averaging the normals of each ridge adjacent to the vertex.  Next we shift the point a small amount in the direction opposite its normal, resulting in a slightly smaller shape.  Once this is done for all regions, the end result is a gap between them, which will be printed by the 3D printer.
-### Markdown
+7.  Finally we create the triangles to output to our stl.  We can accomplish this by choosing an anchor point on each of the ridges, then iterating through each set of adjacent points not including the anchor.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Time Complexity
+This algorithms Time Complexity is not only dependent on the number of polygons in the input, but also their arrangement, as well as the number of desired points.  In addition, the random point generation can potentially lead to runs that never end, which is why there is a maximum number of attempts designated in the code.  Because of this I will discuss two main areas of the algorithm that can be improved upon to reduce runtime.
 
-```markdown
-Syntax highlighted code block
+1. Point generation is probably the largest target.  If you can generate points inside of the model, then you can largely ignore step 3.  
+2.  Generating a new voronoi diagram for every input can be very time intensive, especially as the number of points increase.  This can be solved by iteratively adding points to the diagram, although you would need to maintain a backup in case of an invalid point.  
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nah6563/Voronoi3DPrint/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
