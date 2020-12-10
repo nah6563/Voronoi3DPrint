@@ -34,11 +34,12 @@ Similar problems to this have been approached multiple times before.
 I primarily explored two approaches for this method, neither of which were efficient enough for real-world use.  I will focus mainly on the second algorithm in this section.
 
 The algorithm begins with a set of triangles given by the stl, as well as a second list of their normals.  
-1. hi
-2. test
-
-
-
+1. First we create a set of all unique points that occur in the set of triangles, noting their minimum and maximum value in each dimension.  We will use these values to create a bounding box around the model.
+2. Next we will generate a single random point, which we will call X, within a bounding box of the model, and create a voronoi diagram using this new point and the set of points we created earlier.
+3. Now we examine the region created by X in the voronoi diagram. First we will find all neighboring points from the shell by finding the regions that share a ridge with this one.  For each one of these points, we will locate the original triangles containing that point in the stl.  Based on the inner product of the normals of these triangles and the vector created by moving from one of the triangles to X.  If our point is located within the model, we can move on.  Otherwise we will move back to step 2.
+4. Next we will check all of the vertices that make up X's region in a similar fashion as described in 3.  In order to prevent trimming, we will make sure that X's region is also contained entirely within the model.  
+5. If the region is contained entirely within the model, we can append X to the list that we generated in 1, and then move on to step 2 again.  We can repeat this for as regions as we want to be hollowed out.
+6. The regions created by a voronoi diagram are pefectly packed.  Therefore once we are content with the number of regions, our next goal is to shrink them in order to make them printable.  We accomplish this by iterating through every region that we have created, and calculating the normal at each vertex.  We can approximate this by averaging the normals of each ridge adjacent to the vertex.  Next we shift the point a small amount in the direction opposite its normal, resulting in a slightly smaller shape.  Once this is done for all regions, the end result is a gap between them, which will be printed by the 3D printer.
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
